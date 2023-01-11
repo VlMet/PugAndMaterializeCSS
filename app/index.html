@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="../node_modules/material-icons/iconfont/material-icons.css">
+  </head>
+  <body> 
+    <!--mixins-->
+    <!--disabled items-->
+    <ul class="sidenav" id="mobile-demo">
+          <li><a href="#!">Главная </a></li>
+          <li><a class="modal-trigger" href="#modal">Не главная</a></li>
+          <li><a class="modal-trigger" href="#modal">Это тоже не главная</a></li>
+    </ul>
+    <div class="modal" id="modal">
+      <div class="modal-content"> 
+        <h4>Я не придумал, что там будет</h4>
+        <p>да и не хочу я...</p>
+      </div>
+      <div class="modal-footer"> <a class="modal-close waves-effect btn-flat" href="#!">Ладно </a></div>
+    </div>
+    <!--navigation-->
+    <div class="navbar-fixed">
+      <nav class="blue">
+        <div class="nav-wrapper">
+          <div class="container"> <a class="brand-logo" href="#"><img src="img/logo.png" alt="logo" height="50"><a class="sidenav-trigger" href="#" data-target="mobile-demo"><i class="material-icons">menu</i></a></a>
+            <ul class="right hide-on-med-and-down">
+                  <li><a href="#!">Главная </a></li>
+                  <li><a class="modal-trigger" href="#modal">Не главная</a></li>
+                  <li><a class="modal-trigger" href="#modal">Это тоже не главная</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--slider-->
+    <div class="container">
+      <div class="carousel carousel-slider center">
+            <div class="carousel-item" href="#"><img src="img/slider1.jpg" alt="slider1"></div>
+            <div class="carousel-item" href="#"><img src="img/slider2.jpg" alt="slider2"></div>
+            <div class="carousel-item" href="#"><img src="img/slider3.jpg" alt="slider3"></div>
+            <div class="carousel-item" href="#"><img src="img/slider4.jpg" alt="slider4"></div>
+      </div>
+    </div>
+    <!--cards-->
+    <div class="container">
+      <div class="row">
+            <div class="col s12 l6">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light"><img class="activator" src="img/slider3.jpg"></div>
+                <div class="card-content"><span class="card-title activator grey-text text-darken-4">Каково быть самоучкой?<i class="material-icons right">more_vert</i></span></div>
+                <div class="card-reveal"><span class="card-title grey-text text-darken-4">Каково быть самоучкой?<i class="material-icons right">close</i></span>
+                  <p>Тяжело, знания долго структурируются, но зато все, в чем я копался - остается в моей голове навсегда</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 l6">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light"><img class="activator" src="img/slider2.jpg"></div>
+                <div class="card-content"><span class="card-title activator grey-text text-darken-4">Pug and MaterializeCSS<i class="material-icons right">more_vert</i></span></div>
+                <div class="card-reveal"><span class="card-title grey-text text-darken-4">Pug and MaterializeCSS<i class="material-icons right">close</i></span>
+                  <p>Да, именно они, не предстваляю пока практического применения, но это прикольно. Мне больше понравился, чем bootstrap. А Pug, конечно, штука забавная - впервые увидел и удивился: 'Чудо!' - подумал я, но с каждым модулем код менее читаем, оказалась бяка какая-то</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 l6">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light"><img class="activator" src="img/slider1.jpg"></div>
+                <div class="card-content"><span class="card-title activator grey-text text-darken-4">#Ищу_заботливого_middle_папу<i class="material-icons right">more_vert</i></span></div>
+                <div class="card-reveal"><span class="card-title grey-text text-darken-4">#Ищу_заботливого_middle_папу<i class="material-icons right">close</i></span>
+                  <p>Как же мне не хватает отцовских лещей и уверенных наставлений</p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 l6">
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light"><img class="activator" src="img/slider4.jpg"></div>
+                <div class="card-content"><span class="card-title activator grey-text text-darken-4">Ненавижу аниме<i class="material-icons right">more_vert</i></span></div>
+                <div class="card-reveal"><span class="card-title grey-text text-darken-4">Ненавижу аниме<i class="material-icons right">close</i></span>
+                  <p>Аниме девочки за компьютером - это чистая случайность, я люблю фильмы Тарантино с крутыми мужиками, матами и насилием</p>
+                </div>
+              </div>
+            </div>
+      </div>
+    </div>
+    <!--parallax-->
+    <div class="parallax-container"> 
+      <div class="parallax"><img src="img/parallax.jpg" alt="parallax"></div>
+    </div>
+    <!--footer-->
+    <footer class="page-footer blue">
+      <div class="container"> 
+        <div class="row">
+          <h5 class="col s12 white-text">Какое время года любимое?</h5>
+          <div class="input-field col l10 s12"><i class="material-icons prefix red-text">textsms </i>
+            <input class="autocomplete white-text" type="text" id="autocomplete-input">
+            <label for="autocomplete-input">Пиши сюда </label>
+          </div>
+          <button class="btn waves-effect waves-light red col l2 s12">Отправить<i class="material-icons right">send</i></button>
+        </div>
+      </div>
+      <div class="footer-copyright"> 
+        <div class="container">Developer: Vlad Metelev<a class="grey-text text-lighten-4 right" href="#">GitHub </a></div>
+      </div>
+    </footer>
+    <script src="../node_modules/jquery/dist/jquery.min.js"> </script>
+    <script src="../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

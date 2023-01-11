@@ -1,0 +1,97 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="../node_modules/materialize-css/dist/css/materialize.min.css")
+        link(rel="stylesheet", href="../node_modules/material-icons/iconfont/material-icons.css")
+        
+         
+    body 
+    
+        //mixins
+        mixin navbar-item
+            li
+                a(href="#!") Главная 
+            li
+                a(href="#modal").modal-trigger Не главная
+            li
+                a(href="#modal").modal-trigger Это тоже не главная
+        mixin slider-item(num)
+            .carousel-item(href="#")
+                img(src="img/slider" + num + ".jpg", alt="slider" + num)
+        mixin card-item(num, title, text)
+            .col.s12.l6
+                    .card
+                        .card-image.waves-effect.waves-block.waves-light
+                            img(src="img/slider" + num + ".jpg").activator
+                        .card-content
+                            span.card-title.activator.grey-text.text-darken-4= title
+                                i.material-icons.right more_vert
+                        .card-reveal
+                            span.card-title.grey-text.text-darken-4=title
+                                i.material-icons.right close
+                            p=text
+
+
+        //disabled items
+        ul.sidenav#mobile-demo
+            +navbar-item
+        .modal#modal
+            .modal-content 
+                h4 Я не придумал, что там будет
+                p да и не хочу я...
+            .modal-footer 
+                a(href="#!").modal-close.waves-effect.btn-flat Ладно 
+
+        //navigation
+        .navbar-fixed
+            nav.blue
+                .nav-wrapper
+                    .container 
+                        a(href="#").brand-logo
+                            img(src="img/logo.png", alt="logo", height="50")                        
+                            a(href="#", data-target="mobile-demo").sidenav-trigger
+                                i.material-icons menu
+                        ul.right.hide-on-med-and-down
+                            +navbar-item
+
+        //slider
+        .container
+            .carousel.carousel-slider.center
+                -for (let i = 1; i <= 4; i++)
+                    +slider-item(i)
+ 
+        //cards
+        .container
+            .row
+                +card-item(3, "Каково быть самоучкой?", "Тяжело, знания долго структурируются, но зато все, в чем я копался - остается в моей голове навсегда")
+                +card-item(2, "Pug and MaterializeCSS", "Да, именно они, не предстваляю пока практического применения, но это прикольно. Мне больше понравился, чем bootstrap. А Pug, конечно, штука забавная - впервые увидел и удивился: 'Чудо!' - подумал я, но с каждым модулем код менее читаем, оказалась бяка какая-то")
+                +card-item(1, "#Ищу_заботливого_middle_папу", "Как же мне не хватает отцовских лещей и уверенных наставлений")
+                +card-item(4, "Ненавижу аниме", "Аниме девочки за компьютером - это чистая случайность, я люблю фильмы Тарантино с крутыми мужиками, матами и насилием")
+
+        //parallax
+        .parallax-container 
+            .parallax
+                img(src="img/parallax.jpg", alt="parallax")
+
+        //footer
+        footer.page-footer.blue
+            .container 
+                .row
+                    h5.col.s12.white-text Какое время года любимое?
+                    .input-field.col.l10.s12
+                        i.material-icons.prefix.red-text textsms 
+                        input(type="text").autocomplete.white-text#autocomplete-input
+                        label(for="autocomplete-input") Пиши сюда 
+                    button.btn.waves-effect.waves-light.red.col.l2.s12 Отправить
+                        i.material-icons.right send
+            .footer-copyright 
+                .container
+                    | Developer: Vlad Metelev
+                    a(href="#").grey-text.text-lighten-4.right GitHub 
+        script(src="../node_modules/jquery/dist/jquery.min.js") 
+        script(src="../node_modules/materialize-css/dist/js/materialize.min.js")
+        script(src="js/index.js")
